@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ObjectDestruturing</title>
+</head>
+<body>
+    <h1>ObjectDestruturing</h1>
+
+
+    <script>
+        // objectDestruturing 
+
+        let hotel = {
+            name: "hotel",
+            Location: "hotel inside the corner",
+            categories : ["chinease","italina","english"],
+            mainMenu : ["Fooda","Foodb","Foodc"],
+            opiningHours: {
+                sunday:{open:"09:00AM",close:"11:00PM"},
+                monday:{open:"10:00AM",close:"12:00PM"},
+            }
+        }
+
+        // false value 0 , null , undefined, (empty string )
+
+        console.log("This is short circuits &&")
+        let result = "programming" && "coders" && 5; // fetch last value in the condition 
+        // let result = 5000 && "coders";
+        console.log(result);
+
+        // || operator in short circuits 
+        console.log("This is short circuits ||")
+        let result2 = "programming" || "coders" || 5; // fetch first value in the condition 
+        // let result = 5000 || "coders";
+        console.log(result2);
+
+
+        // ?? operator in short circuits 
+        console.log("This is short circuits ?? nullesht" )
+        let numGuest  = 0;
+        let result3 = numGuest ?? 10; // it return first not nullish value in the condition 
+        
+        console.log(result3);
+
+        // for of loop in js 
+        
+        
+        console.log("this is for of loop ")
+        let for_of_loop = [...hotel.mainMenu, ...hotel.categories]
+        console.log(for_of_loop);
+
+        // for(let elem of for_of_loop) console.log(elem)
+        for(let elem of for_of_loop.entries()) console.log(elem)
+
+        // let {name,Location,mainMenu} = hotel;
+        // console.log(name,Location,mainMenu);
+
+
+        // change the name of the key in objects 
+        // let {name:hotename,Location:hotelLocation,mainMenu:hotelMainMenue} = hotel;
+        // console.log(hotename,hotelLocation,hotelMainMenue);
+
+
+        // setting the defoult value in the object destructuring 
+        // let {name,Menu = [],categories = []} =hotel;
+        // console.log(name,Menu,categories);
+
+
+        // Destructuring Nested objects 
+
+        // let {name,opiningHours} = hotel;
+        // console.log(name,opiningHours);
+        // let {sunday:{open,close}} = opiningHours;
+        // console.log(open,close);
+
+        // spread operator in array 
+
+        let array = [1,3,3,23,232]
+        console.log(...array);
+
+        // usecase 
+
+
+        let newArray =[1,2,3,4,...array];
+        // console.log(newArray)
+        console.log(...newArray)
+        
+        let updateMenu = [...hotel.mainMenu,"first","second","third"]
+        console.log(updateMenu);
+
+        // join two arrays with spread operator 
+
+        let joinedArray = [...newArray,updateMenu];
+        console.log(joinedArray);
+
+
+        let passion = "programming";
+        console.log(...passion);
+
+
+        // rest oprator it is resiprocal of the spread operator 
+
+        // let [a,b,...others]=array;
+        let [...others]=array;
+        console.log(others);
+
+        // Object 
+        let {sunday, ...weakday} =hotel.opiningHours;
+        console.log(sunday,weakday);
+
+
+
+    </script>
+</body>
+</html>

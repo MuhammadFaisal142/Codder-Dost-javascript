@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>optionalChaining</title>
+</head>
+<body>
+    <h1>optionalChaining</h1>
+
+    <script>
+
+let opiningHours = {
+            sunday: { open: "09:00AM", close: "11:00PM" },
+            monday: { open: "10:00AM", close: "12:00PM" },
+            tuesday: { open: "11:00AM", close: "13:00PM" },
+        }
+        let hotel = {
+            name: "hotel",
+            Location: "hotel inside the corner",
+            categories: ["chinease", "italina", "english"],
+            mainMenu: ["Fooda", "Foodb", "Foodc"],
+            opiningHours, // if key name is same then just wirte key name
+        }
+        // console.log(hotel);
+
+        // without optional chaining
+
+        // if(hotel.opiningHours && hotel.opiningHours.sunday){
+        //     console.log(hotel.opiningHours.sunday.open)
+        // }
+
+        // with optional chaining
+
+        // console.log(hotel.opiningHours.saturday?.open);
+
+
+
+        // i want to fetch all keyname in the object 
+        // keys(properties)
+        
+        let  properties = Object.keys(opiningHours);
+        console.log(properties);
+
+        for(let key of properties){
+            console.log(key);
+        }
+
+
+        // values 
+
+        console.log("with Values methods ")
+        let values = Object.values(opiningHours);
+        console.log(values);
+
+
+        // complete Object
+
+        console.log("entries return complete object ")
+        let entries = Object.entries(opiningHours);
+        for(let [key,{open,close}] of entries){
+            console.log(`on ${key} we open at ${open} And close at ${close}`);
+        }
+        
+
+        // set 
+
+        console.log("This is Set method in the array ")
+        // let itemSet = new Set([1,2,4,5,3])
+        let itemSet = new Set("programming")
+        // console.log(itemSet)
+        // console.log(itemSet.size)
+        // itemSet.add(9);
+        // itemSet.delete(9);
+
+        // console.log(itemSet)
+        // console.log(itemSet.has(4)) // return true
+
+        for( let key of itemSet){
+            console.log(key)
+        }
+    </script>
+</body>
+</html>

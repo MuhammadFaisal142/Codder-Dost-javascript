@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Method in the javascript</title>
+</head>
+
+<body>
+    <h1>Array Method in the javascript</h1>
+
+
+
+    <script>
+        let letters = ["a", "b", "c", "d"];
+
+        // revers (mutate the original array )
+        console.log("this is simple print array")
+        console.log(letters);
+        let reverse = letters.reverse();
+        console.log("this is revers method ")
+        console.log(reverse);
+
+        // concate two arrays and return one array 
+
+        let num1 = ["a1", "b1", "c1", "d1"];
+        // this is spread method of the array for print the array     
+        // console.log(...num1,...letters);
+        // concat method is not mutate
+        console.log("this is concet method ")
+        let concat = num1.concat(letters);
+        console.log(concat);
+
+        // join
+
+        console.log("this is join method ")
+        let join = letters.join(',');
+        console.log(join);
+        console.log(typeof join);
+
+        // slice
+
+        console.log("this is slice method ")
+        let slice = num1.slice(1, 2);
+        console.log(slice);
+        console.log(typeof slice);
+
+        // splice
+
+        // array.splice(index,deletedvalue,valueToBeAdded)
+        let num2 = [3, 4, 5, 6, 7]
+        console.log("this is splice method")
+        let splice = num2.splice(1, 0, 1, 4);
+
+        console.log("Returned value of the array :", splice);
+        console.log("Original Array = ", num2);
+
+        // at method in the array find the index in the array 
+
+        console.log("This is at method ")
+        let num3 = [3, 2, 3, 4];
+        console.log(num3[0]);
+        console.log(num3.at(0));
+
+        // map method in the array 
+
+        console.log("Map method in the array and transformation");
+        let arrayofElement = [3000, 4000, 5000, 6000];
+        let newSalary = arrayofElement.map(salary => {
+            let increamentedAmount = salary / 2;
+            return salary + increamentedAmount;
+        })
+        console.log("After 50% add in the all values : ", newSalary);
+
+
+        // filter method in the array 
+
+        console.log("filter method in the array and transformation");
+        let gifts = ["Watch", "Ring", "chocolate", "Teddy-bear", "watch", "Ring", "faisal"];
+        let filterArray = gifts.filter(gift => {
+            if (gift == "watch" || gift == "Ring") {
+                return gift;
+            }
+        })
+        console.log("After filtering in the all values : ", filterArray);
+
+
+        // reduce method in the array in js 
+        // sum of all values 
+        console.log("Reduced Method in the Array ");
+
+        let num4 = [1, 3, 4, 5, 8, 6];
+        let sum = num4.reduce(function (total1, currentvalue1) {
+            return total1 + currentvalue1;
+        }, 0)
+        console.log(sum);
+
+
+        // find method in the array 
+
+        console.log("Find method in the array :")
+
+        let students = [{ id: 1, name: "Faisal" }, { id: 2, name: "saman" }];
+        let result = students.find(student => {
+            return student.id === 1
+
+        })
+        console.log(result);
+
+
+
+
+        // findindex return the index of the match value 
+
+        console.log("Find method in the array of js");
+
+        let resultFind = num4.findIndex(id => {
+            return id > 1;
+        })
+        console.log(resultFind);
+
+
+        // some and every method in the array simple working and,or
+
+
+        console.log("some and every method in the array simple working and,or ");
+        let result2 = num4.some(num => {
+            return num > 3;
+        })
+        console.log(result2);
+
+
+        // flat method in the array ?
+        console.log("Flat Method in the Array :")
+        let nested_array = [2, 4, 5, [6, 7, 8]];
+        let result3 = nested_array.flat();
+        console.log(result3);
+
+        // flatmap 
+        console.log("flatemap method in the array :");
+
+        let cart = [
+            {
+                name: "Mobile Phone",
+                qty: 2,
+                price: 400,
+            },
+            {
+                name: "Tablet Phone ",
+                qty: 3,
+                price: 4300,
+            },
+        ]
+        let newcart = cart.flatMap(item => {
+            if (item.name === "Mobile Phone") {
+                return [item, {
+                    name: "screen protector ",
+                    qty: 2,
+                    price: 0,
+                }]
+            } else {
+                return [item];
+            }
+
+        })
+        console.log(newcart)
+
+        // sort 
+
+        console.log("sort array using sort method");
+        let num5 = [-2,-4,6,1, 5, 3,]
+        num5.sort((a,b)=>{
+            // return a-b;
+            return b-a;
+        })
+        console.log(num5);
+    </script>
+</body>
+
+</html>

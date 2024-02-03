@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asyncronous javascript</title>
+</head>
+<body>
+    <h1>Asyncronous javascript </h1>
+
+    <script>
+        // console.log(1)
+        // console.log(2)
+
+
+        // // async example
+
+        // setTimeout(()=>{
+        //     console.log("call back function called after 4 seconds ")
+        // },4000) // after three seconds 
+        // console.log(3)
+        // console.log(4)
+
+        // Making HTTP request (Example)
+        let request = new XMLHttpRequest();
+        // console.log(request,request.readyState);
+
+        request.addEventListener('readystatechange',()=>{
+            // console.log(request,request.readyState)
+            if(request.readyState === 4 && request.status == 200){
+                let data = JSON.parse(request.responseText)
+                console.log(data);
+            }else if(request.readyState === 4){
+                console.log("Page not found :")
+            }
+        })
+
+
+        // setup the request
+        
+        request.open("Get","data.json") 
+
+        // sending the request 
+
+        request.send();
+
+        // promise genral example
+
+        let getSomthing = () =>{
+
+            return new Promise((resolve,reject)=>{
+                resolve("Some Data") // Dumy data
+                // reject("Some Error") 
+            })
+        }
+
+        getSomthing().then((data)=>{
+            console.log(data)
+        }).catch((error)=>{
+            console.log(error)
+        })
+
+
+
+
+
+        // value state discription
+
+        // 0 UNSENT Client has been created. open not called yet.
+        // 1 opened open() has been called.
+        // 2 HEADER_RECEIVED send() had been called, and headers 
+        // 3 LOADING Downloading; responseText holds partial data.
+        // 4 DONE the operation is complete.
+
+        // status code 
+
+        // information response (100-199)
+        // successful response (200-299)
+        // client error response (300-399)
+        // server error response (500-599)
+
+    </script>
+</body>
+</html>

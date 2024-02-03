@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inhance Object Litrals </title>
+</head>
+
+<body>
+    <h1>Inhance Object Litrals</h1>
+
+    <script>
+        // objectDestruturing 
+
+        let opiningHours = {
+            sunday: { open: "09:00AM", close: "11:00PM" },
+            monday: { open: "10:00AM", close: "12:00PM" },
+            tuesday: { open: "11:00AM", close: "13:00PM" },
+        }
+        let menuType = "platinum";
+        let hotel = {
+            name: "hotel",
+            Location: "hotel inside the corner",
+            categories: ["chinease", "italina", "english"],
+            mainMenu: ["Fooda", "Foodb", "Foodc"],
+            // opiningHours:opiningHours // old way
+            opiningHours, // if key name is same then just wirte key name
+            order(){
+
+            },
+            menuType
+        }
+        console.log(hotel);
+
+    </script>
+</body>
+
+</html>

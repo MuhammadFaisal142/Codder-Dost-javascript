@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+</head>
+<body>
+    <h1>This is local storage in js </h1>
+    <script>
+        console.log(window.localStorage );
+
+        // set item on the localstorage
+
+
+        console.log("Set Items");
+        localStorage.setItem('passion','programming')
+        localStorage.setItem('age',22)
+        console.log(localStorage);
+
+
+        // get item from local storage
+
+
+        console.log("Get Items");
+        let getpassion = localStorage.getItem('passion');
+        let getage = localStorage.getItem('age');
+        console.log(getpassion);
+        console.log(getage);
+
+
+        // update item from localStorage
+        
+
+        console.log("Update Items");
+
+        let updateAge = localStorage.setItem("age",24)
+        console.log(localStorage);
+
+
+        // remove item localStorage 
+        console.log("remove item on the localstorage");
+        localStorage.removeItem("age");
+        console.log(localStorage);
+
+
+        // array of objects in localstorage
+
+        console.log("array of objects in localstorage");
+
+        let vehicles = [
+        {campany:"Honda",model:"2009"},
+        {campany:"HondaAgain",model:"2039"}
+        ]
+        // console.log(vehicles);
+        // console.log(typeof vehicles);
+        let stringVehicles = JSON.stringify(vehicles);
+        console.log(stringVehicles)
+        localStorage.setItem("vehicles ", stringVehicles);
+        console.log(localStorage);
+
+        console.log("get object from the localstorage : ");
+        let storedItem = localStorage.getItem('vehicles')
+        let objectFormate = JSON.parse(storedItem);
+        console.log(objectFormate)
+    </script>
+</body>
+</html>

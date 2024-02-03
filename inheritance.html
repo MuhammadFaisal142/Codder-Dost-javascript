@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inhertance </title>
+</head>
+<body>
+    <h1>This is Inheritance of js</h1>
+
+    <script>
+
+        // parent Class         
+
+        class Car {
+            constructor(color,model){
+                this.color=color;
+                this.model=model;
+            }
+            startEngine(){
+                console.log("This is start engine method of Car class :");
+            }
+        }
+
+        // Child Class 
+
+        class Bike extends Car{
+
+            // Add few properties in this child class 
+            constructor(color,model,enginCapcity){
+                console.log("This is child class : ")
+                super(color,model)
+                this.enginCapcity = enginCapcity;
+            }
+            
+        }
+
+
+
+        let NewBike = new Bike("black",3022,"Full");
+        // console.log(NewBike.__proto__);
+        console.log(NewBike);
+    </script>
+</body>
+</html>

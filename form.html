@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submit </title>
+    <style>
+        body{
+            background-color: lightblue;
+            font: 200;
+            font-family: 'segoe UI';
+        }
+    </style>
+</head>
+<body>
+    <h1>This is form submit toturial</h1>
+    <form action="" class="sign-up-Form">
+        <input type="email" name="userEmail" id="email" placeholder="Email">
+        <input type="password" name="userPassword" id="password" placeholder="Password">
+        <input type="submit" value="submit">
+    </form>
+    <script>
+        let form=document.querySelector('.sign-up-Form')
+        // let email=document.querySelector('#email')
+        // let password=document.querySelector('#password')
+       
+        // console.log(form);
+        form.addEventListener('submit',(e)=>{
+            e.preventDefault();
+            // console.log(email.value,password.value)
+            // console.log(form.email.value,form.password.value)
+            // fetch form the help of the name 
+            console.log(form.userEmail.value,form.userPassword.value)
+            console.log("Form is Submited :");
+        })
+    </script>
+</body>
+</html>

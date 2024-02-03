@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map in javascipte</title>
+</head>
+
+<body>
+    <h1>Map in javascipte</h1>
+
+    <script>
+        let opiningHours = {
+            sunday: { open: "09:00AM", close: "11:00PM" },
+            monday: { open: "10:00AM", close: "12:00PM" },
+            tuesday: { open: "11:00AM", close: "13:00PM" },
+        }
+        let hotel = {
+            name: "hotel",
+            Location: "hotel inside the corner",
+            categories: ["chinease", "italina", "english"],
+            mainMenu: ["Fooda", "Foodb", "Foodc"],
+            opiningHours, // if key name is same then just wirte key name
+        }
+        let resturantMap = new Map();
+        // Adding value in the map 
+        resturantMap.set(name, "karachi hotel")
+        resturantMap.set(1, "Address1")
+        resturantMap.set(2, "Address2").set(true, "we are open today").set(false, "we are closing today:")
+        console.log(resturantMap);
+
+        // getting value 
+
+        console.log(resturantMap.get(true));
+        console.log(resturantMap.get(false));
+        console.log(resturantMap.get(1));
+        console.log(resturantMap.get(2));
+
+        // size of map
+         console.log(resturantMap.size) 
+
+    </script>
+</body>
+
+</html>

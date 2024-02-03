@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes in OOP in js </title>
+</head>
+<body>
+    <h1>Classes in OOP in js (protoType)</h1>
+    <script>
+        class Car {
+            constructor(color,model){
+                this.color=color;
+                this.model=model;
+            }
+        
+        startEngine(){
+            console.log("This is start engine method of Car class")
+        }
+
+        // setter and getter are properties not method or function
+        get _startEngine(){
+            console.log("This is start engine method of Car class using getter");
+        }
+        set changeValue(color){
+            console.log(this.color = color);
+        }
+        get discription(){
+            console.log(`This is color ${this.color} and this is model ${this.model}`);
+        }
+    }
+
+    // this is static Method 
+
+    Car.breakMethod = function(){
+        console.log("This is static engine method of Car Class")
+    }
+        let honda = new Car("black",3432);
+        console.log(honda._startEngine);
+        console.log(honda.startEngine());
+
+        console.log(honda.__proto__);
+        honda.changeValue = "white";
+        console.log(honda.__proto__);
+        console.log(honda.discription);
+      Car.breakMethod();  
+    </script>
+</body>
+</html>

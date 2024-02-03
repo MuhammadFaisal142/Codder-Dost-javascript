@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API</title>
+</head>
+<body>
+    <h1>Fetch API in js </h1>
+
+    <script>
+
+        // async and await 
+        let getTodos =  async() =>{
+
+            try{
+                let response = await fetch("data.json")
+            let response2 = await fetch("data.json");
+            // custom error
+            if(response.status !== 200){
+                throw new Error("Custom error fetching the data");
+            }
+            let data = await response.json()
+            let data2 = await response2.json()
+            // return data 
+            console.log(data,data2);
+            }catch(error){
+                console.log(error);
+            }
+            
+        }
+        // getTodos().then((data)=>{
+        //     console.log(data);
+        // }).catch((error)=>{
+        //     console.log(error);
+        // });
+        
+        // agr ik se zayada fetcha and await return karny ho ya to us ko object bna kr return kr do nahi to directly console main print kr do jaisy k uper example main howa hai 
+
+            getTodos();
+
+//             console.log("This is Try method in the js")
+// try{
+//     let x=4;
+//     let x=3;
+// }catch(error){
+// console.log(error);
+// }
+
+
+
+
+
+
+
+
+        // fetch("data.json").then((response)=>{
+        //     console.log("Promise resolved :", response)
+        //     return response.json();
+        // }).then((data)=>{
+        //     console.log(data);
+        // }).catch((error)=>{
+        // console.log(error);    
+        // })
+
+        
+    </script>
+</body>
+</html>

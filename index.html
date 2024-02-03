@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adavance Javascript OF coder Dost</title>
+</head>
+<body>
+    <h1>Hello  Words : </h1>
+    <script>
+            let dishes=['Bnana','Apple',"Anar",'Orange'];
+            let dishes1=['Bnana','Apple',"Anar"];
+            console.log(dishes);
+            console.log(dishes.length);
+            console.log(dishes.concat(dishes1));
+            // console.log(dishes.pop());
+            console.log(dishes);
+            // console.log(dishes.push('new'))
+            console.log(dishes);
+            let booleantype=true;
+            let stringtype="true";
+            console.log(typeof booleantype,typeof(stringtype));
+            let i=0;
+            while(i<dishes.length){
+                console.log("while loop data :",dishes[i]);
+                i++;
+            }
+
+
+            console.log("This is Object toturial in js")
+            let car={
+                color : "Black",
+                model : "2022",
+                company : "BlackBarry",
+            }
+            console.log(car);
+            console.log(car["color"]);
+            console.log(car.company);
+            car.color='brown';
+            console.log(car.color);
+            // this keyword in the javascript
+            let student={
+                firstName:"Faisal",
+                lastName:"Saith",
+                location:"gujranwala",
+                birthyear:2001,
+                Education:"Bs-4year program in islamia college ",
+                getSummary:function(){
+                    return `${this.firstName}${this.lastName} lives in the ${this.location} and his education is ${this.Education}`
+                }
+            }
+            console.log(student.getSummary());
+            // foreach method of array 
+            let array=["val1","val2","val3","val4","val5",]
+            array.forEach(function (Element){
+                console.log(Element)
+            })
+
+            // object in the array 
+            let studentData = [{name:"faisal",rollno:"142"},{name:"qaiser",rollno:"143"}];
+            console.log(studentData);
+            // Math Objec in the javascript 
+            console.log(Math);
+            // for-in loop it is used in the object 
+            console.log("for-in loop it is used in the object ")
+            let object = {
+                fname:"faisal",
+               lname:"saith",
+               age:22,
+               location:"lahore",
+            }
+            console.log(object);
+            for (const key in object) {
+                console.log(key);
+            }
+    </script>
+</body>
+</html>

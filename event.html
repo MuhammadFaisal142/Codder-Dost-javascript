@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+</head>
+<body>
+    <h1>Faisal Coder</h1>
+    <ul>
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+        <li>item4</li>
+        <li>item5</li>
+        <li>item6</li>
+    </ul>
+    <button class="clickMe">Click Me </button>
+    <script>
+        const ul = document.querySelector('ul');
+      let elements = document.querySelectorAll('li');
+
+        elements.forEach(function(element) {
+            element.addEventListener('click', (e) => {
+                // console.log(e.target);
+                // e.target.style.textDecoration = "line-through"
+            //  e.target.remove();
+            let li = document.createElement('li');
+            li.textContent="something";
+            ul.append(li); // this is add on the end 
+            // ul.prepend(li); // this is start or top 
+            });
+        });
+
+    </script>
+</body>
+</html>

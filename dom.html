@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+
+<body>
+    <div class="content">
+        <p>Hello Coder</p>
+        <h1>This is DOM toturial</h1>
+        <p>welcome codders</p>
+        <h2 class="codderdost">coder dost family</h2>
+        <h3 id="coders">My passion in coding </h3>
+    </div>
+    <script>
+        // console.log(document);
+        // console.dir(document.URL);
+        let resultedElement = document.querySelector('.content');
+        // let resultedElement= document.querySelectorAll('p');
+        // let resultedElement= document.querySelector('.codderdost');
+        // let resultedElement= document.querySelector('#coders');
+        resultedElement.innerHTML += "<p>i have added new html</p>";
+        console.log(resultedElement.innerText);
+        console.log(resultedElement.innerHTML);
+    </script>
+</body>
+
+</html>

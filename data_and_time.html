@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data and Time in js</title>
+</head>
+<body>
+    <h1>Data and Time in js</h1>
+
+    <button class="hour"></button>
+    <button class="mint"></button>
+    <button class="second"></button>
+    <script>
+        console.log("This is Date method : ")
+        let newDate = new Date();
+
+        // get getFullYear
+
+        console.log(newDate.getFullYear());
+
+        // get month
+
+        console.log(newDate.getMonth());
+
+        // get day
+
+        console.log(newDate.getDay());
+
+        // get Date
+
+        console.log(newDate.getDate());
+
+        // get Hours
+
+        console.log(newDate.getHours());
+
+        // get Mint
+
+        console.log(newDate.getMinutes());
+
+
+        let hourhand = document.querySelector('.hour');
+        let minthand = document.querySelector('.mint');
+        let secondhand = document.querySelector('.second');
+
+        let ticking = function(){
+            let currentDate = new Date();
+             
+            let getHours = currentDate.getHours();
+            let getMin = currentDate.getMinutes();
+            let getSeconds = currentDate.getSeconds();
+
+            hourhand.textContent = getHours;
+            minthand.textContent = getMin;
+            secondhand.textContent = getSeconds;
+        }
+        setInterval(ticking,1000);
+    </script>
+</body>
+</html>
